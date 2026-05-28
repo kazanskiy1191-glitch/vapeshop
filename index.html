@@ -55,24 +55,24 @@
 
   <section class="section featured">
     <div class="container">
-      <h2 class="section__title">Почему выбирают нас</h2>
+      <h2 class="section__title reveal">Почему выбирают нас</h2>
       <div class="features">
-        <div class="feature-card">
+        <div class="feature-card reveal" style="transition-delay:0.1s">
           <div class="feature-card__icon">📦</div>
           <h3 class="feature-card__title">Оптовые цены</h3>
           <p class="feature-card__text">Работаем с оптовиками и розничными покупателями. Чем больше объём — тем ниже цена.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal" style="transition-delay:0.2s">
           <div class="feature-card__icon">🚚</div>
           <h3 class="feature-card__title">Доставка по РФ</h3>
           <p class="feature-card__text">Отправляем заказы во все регионы России. Быстрая и надёжная доставка.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal" style="transition-delay:0.3s">
           <div class="feature-card__icon">✅</div>
           <h3 class="feature-card__title">Только оригиналы</h3>
           <p class="feature-card__text">Сертифицированная продукция от ведущих мировых брендов. Гарантия качества.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal" style="transition-delay:0.4s">
           <div class="feature-card__icon">💬</div>
           <h3 class="feature-card__title">Поддержка 24/7</h3>
           <p class="feature-card__text">Консультации по выбору, помощи с заказом и решением любых вопросов.</p>
@@ -81,10 +81,21 @@
     </div>
   </section>
 
-  <section class="section elon-section">
+  <section class="section catalog-preview">
+    <div class="container">
+      <h2 class="section__title reveal">Популярные товары</h2>
+      <div class="products" id="featuredProducts">
+      </div>
+      <div class="section__actions">
+        <a href="catalog.html" class="btn btn--primary reveal">Смотреть все товары</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="elon-section reveal">
     <div class="container">
       <div class="elon__inner">
-        <div class="elon__avatar">
+        <div class="elon__avatar reveal" style="transition-delay:0.2s">
           <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="elon__svg">
             <circle cx="60" cy="60" r="58" stroke="url(#elonGrad)" stroke-width="2" fill="rgba(0,136,255,0.05)"/>
             <defs>
@@ -130,7 +141,7 @@
   <section class="about">
     <div class="container">
       <div class="about__inner">
-        <div class="about__content">
+        <div class="about__content reveal reveal--left">
           <h2 class="section__title">О компании</h2>
           <p>VapeShop_OptTeamBuy_33 — это надёжный поставщик электронных сигарет и сопутствующих товаров во Владимирской области и по всей России.</p>
           <p>Мы работаем напрямую с производителями, что позволяет нам предлагать лучшие цены на рынке. Специализируемся на оптовых поставках для вейп-шопов и розничных продажах для конечных потребителей.</p>
@@ -141,12 +152,17 @@
             <li>Собственный склад во Владимире (33 регион)</li>
           </ul>
         </div>
-        <div class="about__image">
+        <div class="about__image reveal reveal--right" style="transition-delay:0.2s">
           <div class="about__image-placeholder">33</div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="visitor-counter" id="visitorCounter">
+    <span class="visitor-counter__dot"></span>
+    <span>Сейчас на сайте: <span class="visitor-counter__number" id="visitorCount">12</span> чел.</span>
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -186,6 +202,7 @@
   <script src="js/telegram.js"></script>
   <script src="js/products.js"></script>
   <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
