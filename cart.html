@@ -91,12 +91,16 @@
           <label class="form-label">Способ получения</label>
           <div class="radio-group">
             <label class="radio-label">
-              <input type="radio" name="delivery" value="pickup" checked> Самовывоз
+              <input type="radio" name="delivery" value="pickup" checked onchange="togglePickupTime()"> Самовывоз
             </label>
             <label class="radio-label">
-              <input type="radio" name="delivery" value="delivery"> Доставка
+              <input type="radio" name="delivery" value="delivery" onchange="togglePickupTime()"> Доставка
             </label>
           </div>
+        </div>
+        <div class="form-group" id="pickupTimeGroup">
+          <label class="form-label" for="pickupTime">Во сколько заберёте?</label>
+          <input type="time" class="form-input" id="pickupTime" value="12:00" style="max-width:160px">
         </div>
         <button type="submit" class="btn btn--primary btn--full">Отправить заказ</button>
       </form>
