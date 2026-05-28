@@ -421,6 +421,94 @@ img { max-width: 100%; display: block; }
 
 .section__actions { text-align: center; margin-top: 40px; }
 
+/* Scroll animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal--right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal--left.reveal--visible,
+.reveal--right.reveal--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Visitor counter */
+.visitor-counter {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.visitor-counter__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00f5a0;
+  animation: dotPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.visitor-counter__number {
+  color: var(--accent-neon);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px #00f5a0; }
+  50% { opacity: 0.4; box-shadow: 0 0 2px #00f5a0; }
+}
+
+/* 3D card effect */
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 800px;
+  transition: transform 0.1s ease;
+}
+
+.tilt-card__inner {
+  transform-style: preserve-3d;
+}
+
+.tilt-card__image {
+  transform: translateZ(20px);
+}
+
+.tilt-card .btn {
+  transform: translateZ(30px);
+}
+
 /* Features */
 .features {
   display: grid;
@@ -1311,6 +1399,7 @@ img { max-width: 100%; display: block; }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .visitor-counter { display: none; }
   .burger { display: flex; }
 
   .nav {
