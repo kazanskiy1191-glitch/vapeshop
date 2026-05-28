@@ -187,6 +187,102 @@ function initTiltCards() {
   });
 }
 
+function initHeroSearch() {
+  const input = document.getElementById('heroSearchInput');
+  const results = document.getElementById('heroSearchResults');
+  if (!input || !results) return;
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) { results.classList.remove('hero-search__results--visible'); return; }
+    const found = products.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q)
+    ).slice(0, 6);
+    if (found.length === 0) { results.classList.remove('hero-search__results--visible'); return; }
+    results.innerHTML = found.map(p => `
+      <div class="hero-search__item" onclick="addToCart(${p.id}); document.getElementById('heroSearchInput').value=''; document.getElementById('heroSearchResults').classList.remove('hero-search__results--visible')">
+        <span class="hero-search__item-emoji">${p.emoji}</span>
+        <div class="hero-search__item-info">
+          <div class="hero-search__item-name">${p.name}</div>
+          <div class="hero-search__item-price">${p.price} ₽</div>
+        </div>
+        <button class="btn btn--small btn--primary">В корзину</button>
+      </div>
+    `).join('');
+    results.classList.add('hero-search__results--visible');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!input.contains(e.target) && !results.contains(e.target)) {
+      results.classList.remove('hero-search__results--visible');
+    }
+  });
+}
+
+function initThemeToggle() {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  const saved = localStorage.getItem('vapeshop_theme');
+  if (saved === 'light') { document.documentElement.setAttribute('data-theme', 'light'); btn.textContent = '☀️'; }
+  btn.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('vapeshop_theme', 'dark');
+      btn.textContent = '🌙';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('vapeshop_theme', 'light');
+      btn.textContent = '☀️';
+    }
+  });
+}
+
+function initParticles() {
+  var canvas = document.getElementById('particleCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var w, h;
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (var i = 0; i < 50; i++) {
+    particles.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+      r: Math.random() * 2 + 1,
+      o: Math.random() * 0.5 + 0.1
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(function(p) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0) p.x = w;
+      if (p.x > w) p.x = 0;
+      if (p.y < 0) p.y = h;
+      if (p.y > h) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(0, 136, 255, ' + p.o + ')';
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
 function initVisitorCounter() {
   const el = document.getElementById('visitorCount');
   if (!el) return;
@@ -215,4 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initTiltCards();
   initVisitorCounter();
+  initHeroSearch();
+  initThemeToggle();
+  initParticles();
 });
