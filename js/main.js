@@ -77,7 +77,7 @@ function initModal() {
         return `${product.emoji} ${product.name} x${item.qty} = ${product.price * item.qty}₽`;
       }).join('\n');
 
-      const msg = `🛒 <b>НОВЫЙ ЗАКАЗ</b>\n\n👤 ${name}\n📞 ${phone}\n🚚 ${delivery === 'pickup' ? 'Самовывоз' : 'Доставка'}\n\n<b>Товары:</b>\n${orderItemsList}\n\n━━━━━━━━━━━━━━━\n<b>Итого: ${getCartTotal()} ₽</b>\n━━━━━━━━━━━━━━━\n<a href="http://192.168.1.203:8080/cart.html">Открыть корзину</a>`;
+      const msg = `🛒 <b>НОВЫЙ ЗАКАЗ</b>\n\n👤 ${name}\n📞 ${phone}\n🚚 ${delivery === 'pickup' ? 'Самовывоз' : 'Доставка'}\n\n<b>Товары:</b>\n${orderItemsList}\n\n━━━━━━━━━━━━━━━\n<b>Итого: ${getCartTotal()} ₽</b>\n━━━━━━━━━━━━━━━\n<a href="https://kazanskiy1191-glitch.github.io/vapeshop/cart.html">Открыть корзину</a>`;
 
       sendTelegram(msg);
 
