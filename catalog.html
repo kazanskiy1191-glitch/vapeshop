@@ -8,6 +8,18 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💨</text></svg>">
 </head>
 <body>
+  <div class="age-modal" id="ageModal">
+    <div class="age-modal__overlay"></div>
+    <div class="age-modal__content">
+      <div class="age-modal__icon">🔞</div>
+      <h2 class="age-modal__title">Вам есть 18 лет?</h2>
+      <p class="age-modal__text">Данный сайт содержит информацию о продукции, предназначенной для лиц старше 18 лет.</p>
+      <div class="age-modal__actions">
+        <button class="btn btn--primary" onclick="confirmAge()">Мне есть 18</button>
+        <button class="btn btn--outline" onclick="denyAge()">Менее 18</button>
+      </div>
+    </div>
+  </div>
   <canvas id="particleCanvas" style="position:fixed;inset:0;pointer-events:none;z-index:0"></canvas>
   <div class="smoke-overlay">
     <div class="smoke-particle"></div>
