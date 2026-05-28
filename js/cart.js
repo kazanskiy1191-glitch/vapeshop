@@ -28,7 +28,7 @@ function addToCart(productId) {
 
   const product = products.find(p => p.id === productId);
   if (product) {
-    sendTelegram(`🛒 <b>Новый товар в корзине</b>\n\n${product.emoji} ${product.name}\n💰 ${product.price} ₽\n📦 Всего в корзине: ${getCartCount()} шт.\n🌐 <a href="http://192.168.1.203:8080/cart.html">Открыть корзину</a>`);
+    sendTelegram(`🛒 <b>Новый товар в корзине</b>\n\n${product.emoji} ${product.name}\n💰 ${product.price} ₽\n📦 Всего в корзине: ${getCartCount()} шт.\n🌐 <a href="https://kazanskiy1191-glitch.github.io/vapeshop/cart.html">Открыть корзину</a>`);
   }
 }
 
