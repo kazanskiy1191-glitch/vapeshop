@@ -708,9 +708,11 @@ img { max-width: 100%; display: block; }
 
 .elon__avatar {
   flex-shrink: 0;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   position: relative;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .elon__avatar::before {
@@ -729,10 +731,28 @@ img { max-width: 100%; display: block; }
   50% { opacity: 0.3; transform: scale(1.05); }
 }
 
-.elon__svg {
+.elon__photo {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 20px rgba(0, 136, 255, 0.2));
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(0,136,255,0.3);
+}
+
+.elon__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.elon__img-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 40px rgba(0,136,255,0.15);
+  pointer-events: none;
 }
 
 .elon__quote {
@@ -1547,7 +1567,7 @@ img { max-width: 100%; display: block; }
   .hero__corner { display: none; }
 
   .elon__inner { flex-direction: column; text-align: center; gap: 30px; }
-  .elon__avatar { width: 120px; height: 120px; }
+  .elon__avatar { width: 140px; height: 140px; }
   .elon__quote-text { font-size: 1.05rem; }
 
   .about__inner { grid-template-columns: 1fr; gap: 32px; }
