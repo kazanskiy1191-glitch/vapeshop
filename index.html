@@ -8,6 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💨</text></svg>">
 </head>
 <body>
+  <canvas id="particleCanvas" style="position:fixed;inset:0;pointer-events:none;z-index:0"></canvas>
   <div class="smoke-overlay">
     <div class="smoke-particle"></div>
     <div class="smoke-particle"></div>
@@ -24,7 +25,9 @@
           <a href="cart.html" class="nav__link">Корзина <span class="cart-count" id="cartCount">0</span></a>
           <a href="contacts.html" class="nav__link">Контакты</a>
         </nav>
-        <button class="burger" id="burger" aria-label="Меню">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="theme-toggle" id="themeToggle" aria-label="Смена темы">🌙</button>
+          <button class="burger" id="burger" aria-label="Меню">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -45,6 +48,10 @@
         </div>
         <h1 class="hero__title">VapeShop_OptTeamBuy_33</h1>
         <p class="hero__subtitle">Оптовая и розничная продажа электронных сигарет, жидкостей и аксессуаров</p>
+        <div class="hero-search" id="heroSearch">
+          <input type="text" id="heroSearchInput" class="hero-search__input" placeholder="Поиск товаров...">
+          <div class="hero-search__results" id="heroSearchResults"></div>
+        </div>
         <div class="hero__actions">
           <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
           <a href="contacts.html" class="btn btn--outline">Связаться с нами</a>
