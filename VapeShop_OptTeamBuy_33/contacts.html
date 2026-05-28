@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — VapeShop_OptTeamBuy_33</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💨</text></svg>">
+</head>
+<body>
+  <div class="smoke-overlay">
+    <div class="smoke-particle"></div>
+    <div class="smoke-particle"></div>
+    <div class="smoke-particle"></div>
+    <div class="smoke-particle"></div>
+  </div>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="logo">VapeShop<span>_OptTeamBuy_33</span></a>
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">Главная</a>
+          <a href="catalog.html" class="nav__link">Каталог</a>
+          <a href="cart.html" class="nav__link">Корзина <span class="cart-count" id="cartCount">0</span></a>
+          <a href="contacts.html" class="nav__link nav__link--active">Контакты</a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-header__title">Контакты</h1>
+      <p class="page-header__subtitle">Свяжитесь с нами удобным для вас способом</p>
+    </div>
+  </section>
+
+  <section class="section contacts-page">
+    <div class="container">
+      <div class="contacts-layout">
+        <div class="contacts-info">
+          <div class="contact-card">
+            <div class="contact-card__icon">📍</div>
+            <div class="contact-card__info">
+              <h3>Адрес</h3>
+              <p>г. Владимир, ул. Примерная, д. 123</p>
+              <p class="contact-card__note">Склад работает ежедневно с 10:00 до 20:00</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon">📞</div>
+            <div class="contact-card__info">
+              <h3>Телефон</h3>
+              <p>+7 (900) 123-45-67</p>
+              <p class="contact-card__note">WhatsApp, Telegram, Viber</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card__icon">✉️</div>
+            <div class="contact-card__info">
+              <h3>Email</h3>
+              <p>info@vapeshop-opt33.ru</p>
+              <p class="contact-card__note">Оптовые заявки: wholesale@vapeshop-opt33.ru</p>
+            </div>
+          </div>
+          <div class="social-section">
+            <h3>Мы в соцсетях</h3>
+            <div class="social-links social-links--large">
+              <a href="#" class="social-link" aria-label="Telegram">📱 Telegram</a>
+              <a href="#" class="social-link" aria-label="WhatsApp">💬 WhatsApp</a>
+              <a href="#" class="social-link" aria-label="VK">🌐 VKontakte</a>
+            </div>
+          </div>
+        </div>
+        <div class="contacts-form">
+          <h2 class="section__title">Напишите нам</h2>
+          <form class="order-form" id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="contactName">Имя</label>
+              <input type="text" class="form-input" id="contactName" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactPhone">Телефон</label>
+              <input type="tel" class="form-input" id="contactPhone" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Сообщение</label>
+              <textarea class="form-input form-textarea" id="contactMessage" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section setup-section">
+    <div class="container">
+      <h2 class="section__title">Уведомления в Telegram</h2>
+      <div class="setup__inner">
+        <div class="setup__steps">
+          <div class="setup__step">
+            <div class="setup__step-num">1</div>
+            <div class="setup__step-content">
+              <h3>Напиши боту</h3>
+              <p>Открой Telegram, найди бота <strong>@VapeShop33Bot</strong> и отправь любое сообщение (<code>/start</code>).</p>
+            </div>
+          </div>
+          <div class="setup__step">
+            <div class="setup__step-num">2</div>
+            <div class="setup__step-content">
+              <h3>Получи Chat ID</h3>
+              <p>Открой ссылку ниже в браузере на телефоне, найди цифры <code>"chat":{"id":123456789}</code> и скопируй их.</p>
+              <a href="https://api.telegram.org/bot8990430263:AAGQmAlhFR5JGNaQwlu9lJkRAOpPVH4UQi4/getUpdates" target="_blank" class="btn btn--small btn--outline" style="margin-top:8px">Открыть →</a>
+            </div>
+          </div>
+          <div class="setup__step">
+            <div class="setup__step-num">3</div>
+            <div class="setup__step-content">
+              <h3>Вставь Chat ID</h3>
+              <p>Введи скопированный ID ниже и нажми "Подключить":</p>
+              <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+                <input type="text" id="chatIdInput" class="form-input" style="max-width:200px" placeholder="123456789">
+                <button class="btn btn--small btn--primary" onclick="connectTelegram()">Подключить</button>
+                <button class="btn btn--small btn--outline" onclick="testTelegram()">Тест</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="setup__result" id="setupResult">
+          <h3>Статус: <span id="tgStatus">❌ Не подключено</span></h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:8px">После подключения ты будешь получать уведомления о добавлении товаров и новых заказах.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section map-section">
+    <div class="container">
+      <h2 class="section__title">Как нас найти</h2>
+      <div class="map-placeholder">
+        <div class="map-placeholder__content">
+          <div class="map-placeholder__icon">🗺️</div>
+          <p>г. Владимир, ул. Примерная, 123</p>
+          <p class="map-placeholder__hint">Здесь будет карта Яндекс.Карт или Google Maps</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__col">
+          <h3 class="footer__title">VapeShop_OptTeamBuy_33</h3>
+          <p class="footer__text">Оптовая и розничная продажа электронных сигарет, жидкостей и аксессуаров.</p>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Навигация</h3>
+          <a href="index.html" class="footer__link">Главная</a>
+          <a href="catalog.html" class="footer__link">Каталог</a>
+          <a href="cart.html" class="footer__link">Корзина</a>
+          <a href="contacts.html" class="footer__link">Контакты</a>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Контакты</h3>
+          <p class="footer__text">г. Владимир, ул. Примерная, 123</p>
+          <p class="footer__text">+7 (900) 123-45-67</p>
+          <p class="footer__text">info@vapeshop-opt33.ru</p>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Мы в соцсетях</h3>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Telegram">📱</a>
+            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+            <a href="#" class="social-link" aria-label="VK">🌐</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 VapeShop_OptTeamBuy_33. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/telegram.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

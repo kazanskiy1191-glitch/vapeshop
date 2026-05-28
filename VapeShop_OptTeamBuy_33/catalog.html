@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — VapeShop_OptTeamBuy_33</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💨</text></svg>">
+</head>
+<body>
+  <div class="smoke-overlay">
+    <div class="smoke-particle"></div>
+    <div class="smoke-particle"></div>
+    <div class="smoke-particle"></div>
+    <div class="smoke-particle"></div>
+  </div>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html" class="logo">VapeShop<span>_OptTeamBuy_33</span></a>
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">Главная</a>
+          <a href="catalog.html" class="nav__link nav__link--active">Каталог</a>
+          <a href="cart.html" class="nav__link">Корзина <span class="cart-count" id="cartCount">0</span></a>
+          <a href="contacts.html" class="nav__link">Контакты</a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-header__title">Каталог товаров</h1>
+      <p class="page-header__subtitle">Оптовые и розничные цены указаны за единицу товара</p>
+    </div>
+  </section>
+
+  <section class="section catalog-page">
+    <div class="container">
+      <div class="catalog-layout">
+        <aside class="catalog-sidebar">
+          <h3 class="catalog-sidebar__title">Категории</h3>
+          <div class="catalog-sidebar__filters" id="categoryFilters">
+            <button class="filter-btn filter-btn--active" data-category="all">Все товары</button>
+            <button class="filter-btn" data-category="pod">Pod-системы</button>
+            <button class="filter-btn" data-category="liquid">Жидкости</button>
+            <button class="filter-btn" data-category="coils">Испарители</button>
+            <button class="filter-btn" data-category="accessories">Аксессуары</button>
+          </div>
+          <div class="catalog-sidebar__search">
+            <input type="text" id="searchInput" class="search-input" placeholder="Поиск товаров...">
+          </div>
+        </aside>
+        <div class="catalog-content">
+          <div class="products" id="catalogProducts">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__col">
+          <h3 class="footer__title">VapeShop_OptTeamBuy_33</h3>
+          <p class="footer__text">Оптовая и розничная продажа электронных сигарет, жидкостей и аксессуаров.</p>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Навигация</h3>
+          <a href="index.html" class="footer__link">Главная</a>
+          <a href="catalog.html" class="footer__link">Каталог</a>
+          <a href="cart.html" class="footer__link">Корзина</a>
+          <a href="contacts.html" class="footer__link">Контакты</a>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Контакты</h3>
+          <p class="footer__text">г. Владимир, ул. Примерная, 123</p>
+          <p class="footer__text">+7 (900) 123-45-67</p>
+          <p class="footer__text">info@vapeshop-opt33.ru</p>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__title">Мы в соцсетях</h3>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Telegram">📱</a>
+            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+            <a href="#" class="social-link" aria-label="VK">🌐</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 VapeShop_OptTeamBuy_33. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/telegram.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
