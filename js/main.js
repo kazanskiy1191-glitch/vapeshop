@@ -67,6 +67,8 @@ function initModal() {
       const phone = document.getElementById('orderPhone').value;
       const delivery = document.querySelector('input[name="delivery"]:checked')?.value;
       const comment = document.getElementById('orderComment').value;
+      const pickupTime = document.getElementById('pickupTime')?.value || '';
+      const deliveryMethod = delivery === 'pickup' ? 'Самовывоз' + (pickupTime ? ' в ' + pickupTime : '') : 'Доставка';
 
       const orderItems = cart.map(item => {
         const product = products.find(p => p.id === item.id);
@@ -78,7 +80,7 @@ function initModal() {
         return `${product.emoji} ${product.name} x${item.qty} = ${product.price * item.qty}₽`;
       }).join('\n');
 
-      const msg = `🛒 <b>НОВЫЙ ЗАКАЗ</b>\n\n👤 ${name}\n📞 ${phone}\n🚚 ${delivery === 'pickup' ? 'Самовывоз' : 'Доставка'}${comment ? '\n💬 ' + comment : ''}\n\n<b>Товары:</b>\n${orderItemsList}\n\n━━━━━━━━━━━━━━━\n<b>Итого: ${getCartTotal()} ₽</b>\n━━━━━━━━━━━━━━━\n<a href="https://kazanskiy1191-glitch.github.io/vapeshop/cart.html">Открыть корзину</a>`;
+      const msg = `🛒 <b>НОВЫЙ ЗАКАЗ</b>\n\n👤 ${name}\n📞 ${phone}\n🚚 ${deliveryMethod}${comment ? '\n💬 ' + comment : ''}\n\n<b>Товары:</b>\n${orderItemsList}\n\n━━━━━━━━━━━━━━━\n<b>Итого: ${getCartTotal()} ₽</b>\n━━━━━━━━━━━━━━━\n<a href="https://kazanskiy1191-glitch.github.io/vapeshop/cart.html">Открыть корзину</a>`;
 
       sendTelegram(msg);
 
@@ -146,6 +148,12 @@ function updateTgStatus() {
   el.textContent = TELEGRAM_CHAT_ID ? '✅ Подключено' : '❌ Не подключено';
 }
 
+function togglePickupTime() {
+  const pickup = document.querySelector('input[name="delivery"]:checked')?.value === 'pickup';
+  const group = document.getElementById('pickupTimeGroup');
+  if (group) group.style.display = pickup ? 'block' : 'none';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadCart();
   updateCartCount();
@@ -156,4 +164,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initClearCart();
   updateTgStatus();
+  togglePickupTime();
 });
