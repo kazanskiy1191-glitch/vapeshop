@@ -8,6 +8,18 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💨</text></svg>">
 </head>
 <body>
+  <div class="age-modal" id="ageModal">
+    <div class="age-modal__overlay"></div>
+    <div class="age-modal__content">
+      <div class="age-modal__icon">🔞</div>
+      <h2 class="age-modal__title">Вам есть 18 лет?</h2>
+      <p class="age-modal__text">Данный сайт содержит информацию о продукции, предназначенной для лиц старше 18 лет.</p>
+      <div class="age-modal__actions">
+        <button class="btn btn--primary" onclick="confirmAge()">Мне есть 18</button>
+        <button class="btn btn--outline" onclick="denyAge()">Менее 18</button>
+      </div>
+    </div>
+  </div>
   <canvas id="particleCanvas" style="position:fixed;inset:0;pointer-events:none;z-index:0"></canvas>
   <div class="smoke-overlay">
     <div class="smoke-particle"></div>
@@ -95,6 +107,56 @@
             </div>
             <button type="submit" class="btn btn--primary btn--full">Отправить</button>
           </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="section__title">Часто задаваемые вопросы</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-item__question" onclick="this.parentElement.classList.toggle('faq-item--open')">
+            <span>С какого возраста можно купить?</span>
+            <span class="faq-item__arrow">▼</span>
+          </div>
+          <div class="faq-item__answer">Продажа электронных сигарет и жидкостей осуществляется только лицам старше 18 лет. При получении заказа может потребоваться подтверждение возраста.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-item__question" onclick="this.parentElement.classList.toggle('faq-item--open')">
+            <span>Как оформить заказ?</span>
+            <span class="faq-item__arrow">▼</span>
+          </div>
+          <div class="faq-item__answer">Добавьте товары в корзину, заполните форму оформления заказа — имя, телефон, способ получения. Мы свяжемся с вами для подтверждения.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-item__question" onclick="this.parentElement.classList.toggle('faq-item--open')">
+            <span>Есть ли доставка?</span>
+            <span class="faq-item__arrow">▼</span>
+          </div>
+          <div class="faq-item__answer">Да, доставляем по всей России. Стоимость зависит от региона. Для оптовых заказов доставка бесплатная.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-item__question" onclick="this.parentElement.classList.toggle('faq-item--open')">
+            <span>Как оплатить?</span>
+            <span class="faq-item__arrow">▼</span>
+          </div>
+          <div class="faq-item__answer">Наличными при самовывозе, перевод на карту, безналичный расчёт для юридических лиц.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-item__question" onclick="this.parentElement.classList.toggle('faq-item--open')">
+            <span>Есть ли оптовые скидки?</span>
+            <span class="faq-item__arrow">▼</span>
+          </div>
+          <div class="faq-item__answer">Да, чем больше объём заказа — тем ниже цена. Индивидуальные условия для постоянных клиентов. Свяжитесь с нами для обсуждения.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-item__question" onclick="this.parentElement.classList.toggle('faq-item--open')">
+            <span>Товары оригинальные?</span>
+            <span class="faq-item__arrow">▼</span>
+          </div>
+          <div class="faq-item__answer">Мы работаем напрямую с официальными дистрибьюторами. Вся продукция сертифицирована и имеет гарантию.</div>
         </div>
       </div>
     </div>
