@@ -14,6 +14,20 @@ function showToast(message, type = 'info') {
   }, 2500);
 }
 
+function confirmAge() {
+  document.getElementById('ageModal').classList.remove('age-modal--active');
+  localStorage.setItem('vapeshop_age', 'confirmed');
+}
+
+function denyAge() {
+  window.location.href = 'https://google.com';
+}
+
+function initAgeModal() {
+  if (localStorage.getItem('vapeshop_age') === 'confirmed') return;
+  document.getElementById('ageModal')?.classList.add('age-modal--active');
+}
+
 function initBurger() {
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
@@ -311,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initTiltCards();
   initVisitorCounter();
+  initAgeModal();
   initHeroSearch();
   initThemeToggle();
   initParticles();
