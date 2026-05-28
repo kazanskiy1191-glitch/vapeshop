@@ -80,7 +80,7 @@ function initModal() {
         return `${product.emoji} ${product.name} x${item.qty} = ${product.price * item.qty}₽`;
       }).join('\n');
 
-      const msg = `🛒 <b>НОВЫЙ ЗАКАЗ</b>\n\n👤 ${name}\n📞 ${phone}\n🚚 ${deliveryMethod}${comment ? '\n💬 ' + comment : ''}\n\n<b>Товары:</b>\n${orderItemsList}\n\n━━━━━━━━━━━━━━━\n<b>Итого: ${getCartTotal()} ₽</b>\n━━━━━━━━━━━━━━━\n<a href="https://kazanskiy1191-glitch.github.io/vapeshop/cart.html">Открыть корзину</a>`;
+      const msg = `🛒 <b>НОВЫЙ ЗАКАЗ</b>\n\n👤 ${name}\n📞 ${phone}\n🚚 ${deliveryMethod}${comment ? '\n💬 ' + comment : ''}\n\n<b>Товары:</b>\n${orderItemsList}\n\n━━━━━━━━━━━━━━━\n<b>Итого: ${getCartTotal()} ₽</b>\n━━━━━━━━━━━━━━━\n<a href="https://cloud-glitch.github.io/vapeshop/cart.html">Открыть корзину</a>`;
 
       sendTelegram(msg);
 
@@ -154,6 +154,53 @@ function togglePickupTime() {
   if (group) group.style.display = pickup ? 'block' : 'none';
 }
 
+function initScrollReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal--visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal, .reveal--left, .reveal--right').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+function initTiltCards() {
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.classList.add('tilt-card');
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+}
+
+function initVisitorCounter() {
+  const el = document.getElementById('visitorCount');
+  if (!el) return;
+  const base = Math.floor(Math.random() * 5) + 8;
+  el.textContent = base;
+  setInterval(() => {
+    const diff = Math.floor(Math.random() * 3) - 1;
+    let val = parseInt(el.textContent) + diff;
+    if (val < 5) val = 5;
+    if (val > 20) val = 20;
+    el.textContent = val;
+  }, 8000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadCart();
   updateCartCount();
@@ -165,4 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initClearCart();
   updateTgStatus();
   togglePickupTime();
+  initScrollReveal();
+  initTiltCards();
+  initVisitorCounter();
 });
