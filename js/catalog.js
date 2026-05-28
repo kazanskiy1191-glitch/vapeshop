@@ -11,17 +11,19 @@ function renderProducts(containerId, list) {
   }
 
   container.innerHTML = list.map(product => `
-    <div class="product-card">
-      <div class="product-card__image">${product.emoji}</div>
-      <div class="product-card__category">${getCategoryLabel(product.category)}</div>
-      <h3 class="product-card__title">${product.name}</h3>
-      <p class="product-card__description">${product.description}</p>
+    <div class="product-card tilt-card">
+      <div class="product-card__image tilt-card__image">${product.emoji}</div>
+      <div class="tilt-card__inner">
+        <div class="product-card__category">${getCategoryLabel(product.category)}</div>
+        <h3 class="product-card__title">${product.name}</h3>
+        <p class="product-card__description">${product.description}</p>
+      </div>
       <div class="product-card__footer">
         <div>
           <div class="product-card__price">${product.price} ₽</div>
           <div class="product-card__price-opt">Опт: от ${product.priceOpt} ₽</div>
         </div>
-        <button class="btn btn--primary btn--small" onclick="addToCart(${product.id})">В корзину</button>
+        <button class="btn btn--primary btn--small tilt-card__btn" onclick="addToCart(${product.id})">В корзину</button>
       </div>
     </div>
   `).join('');
